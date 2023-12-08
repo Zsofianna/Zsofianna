@@ -1,0 +1,36 @@
+// whileによる繰り返し処理3
+
+
+// スライムを何度も攻撃
+// ダメージは、1から10までランダム
+// スライムのHPがゼロになるまで繰り返す
+
+public class Main {
+    public static void main(String[] args) {
+        int hp = 30;
+        int hit;
+        int hpMe = 30;
+        int hitMe;
+        while(hp > 0 && hpMe > 0) {
+            System.out.println("----------------------");
+            hit = (int)(Math.random() * 10 + 1);
+            System.out.println("スライムに、" + hit + "のダメージを与えた！");
+            hp -= hit;
+            System.out.println("スライムの残りのHPは" + hp);
+
+            hitMe = (int)(Math.random() * 10 + 1);
+            System.out.println("主人公が、" + hitMe + "のダメージが与えられた！");
+            hpMe -= hitMe;
+            System.out.println("主人公の残りのHPは" + hpMe);
+
+        }
+        if (hp <= 0 && hpMe <= 0){
+            System.out.println("スライムを倒したが、共に倒された。ゲームオーバー");
+        } else if (hp <= 0){
+            System.out.println("スライムを倒した");
+        } else {
+            System.out.println("主人公が倒された。ゲームオーバー");
+        }
+        
+    }
+}
